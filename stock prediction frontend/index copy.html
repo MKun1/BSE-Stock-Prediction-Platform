@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSE Stock Prediction</title>
+
+
+    <link rel="icon" type="image/x-icon" href="icons\images.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    
+
+</head>
+<body>
+    
+    
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4">
+        <div class="container">
+            <!-- App Title -->
+            <h1 class="display-4">BSE Stock Prediction</h1>
+            <p class="lead">Simple and user-friendly Bombay Stock Exchange price prediction platform</p>
+    
+            <!-- Navigation Links -->
+            <nav class="mt-3">
+                <a href="index.html" class="text-white mx-2">Home</a>
+                <a href="about.html" class="text-white mx-2">About</a>
+                <a href="contactus.html" class="text-white mx-2">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Stock Input Form -->
+        <section id="input-section" class="text-center">
+            <h2 class="mb-4">Predict Stock Prices</h2>
+            <form id="stock-form" class="card shadow p-4 mx-auto" style="max-width: 500px;">
+                <!-- Dropdown for Selecting Stock -->
+                <div class="mb-3">
+                    <label for="stock-dropdown" class="form-label">Select Stock from BSE:</label>
+                    <select id="stock-dropdown" class="form-select">
+                        <option value="">-- Select a Stock --</option>
+                        <option value="RELIANCE">Reliance Industries [RELIANCE]</option>
+                        <option value="TCS">Tata Consultancy Services [TCS]</option>
+                        <option value="HDFCBANK">HDFC Bank [HDFCBANK]</option>
+                        <option value="ICICIBANK">ICICI Bank [ICICIBANK]</option>
+                        <option value="INFY">Infosys [INFY]</option>
+                        <option value="HINDUNILVR">Hindustan Unilever [HINDUNILVR]</option>
+                        <option value="ITC">ITC [ITC]</option>
+                        <option value="BHARTIARTL">Bharti Airtel [BHARTIARTL]</option>
+                        <option value="SBIN">State Bank of India [SBIN]</option>
+                        <option value="LT">Larsen & Toubro [LT]</option>
+                        <option value="KOTAKBANK">Kotak Mahindra Bank [KOTAKBANK]</option>
+                        <option value="AXISBANK">Axis Bank [AXISBANK]</option>
+                        <option value="BAJFINANCE">Bajaj Finance [BAJFINANCE]</option>
+                        <option value="ASIANPAINT">Asian Paints [ASIANPAINT]</option>
+                        <option value="M&M">Mahindra & Mahindra [M&M]</option>
+                        <option value="SUNPHARMA">Sun Pharma [SUNPHARMA]</option>
+                        <option value="MARUTI">Maruti Suzuki [MARUTI]</option>
+                        <option value="TATAMOTORS">Tata Motors [TATAMOTORS]</option>
+                        <option value="NESTLEIND">Nestlé India [NESTLEIND]</option>
+                        <option value="BAJAJFINSV">Bajaj Finserv [BAJAJFINSV]</option>
+                        <option value="POWERGRID">Power Grid Corp [POWERGRID]</option>
+                        <option value="NTPC">NTPC [NTPC]</option>
+                        <option value="ULTRACEMCO">UltraTech Cement [ULTRACEMCO]</option>
+                        <option value="TITAN">Titan Company [TITAN]</option>
+                        <option value="ADANIENT">Adani Enterprises [ADANIENT]</option>
+                        <option value="ADANIPORTS">Adani Ports [ADANIPORTS]</option>
+                        <option value="WIPRO">Wipro [WIPRO]</option>
+                        <option value="HCLTECH">HCL Technologies [HCLTECH]</option>
+                        <option value="TECHM">Tech Mahindra [TECHM]</option>
+                        <option value="INDUSINDBK">IndusInd Bank [INDUSINDBK]</option>
+                        <option value="GRASIM">Grasim Industries [GRASIM]</option>
+                        <option value="JSWSTEEL">JSW Steel [JSWSTEEL]</option>
+                        <option value="TATASTEEL">Tata Steel [TATASTEEL]</option>
+                        <option value="BAJAJ-AUTO">Bajaj Auto [BAJAJ-AUTO]</option>
+                        <option value="BRITANNIA">Britannia [BRITANNIA]</option>
+                        <option value="CIPLA">Cipla [CIPLA]</option>
+                        <option value="DRREDDY">Dr. Reddy's [DRREDDY]</option>
+                        <option value="EICHERMOT">Eicher Motors [EICHERMOT]</option>
+                        <option value="HEROMOTOCO">Hero MotoCorp [HEROMOTOCO]</option>
+                        <option value="HINDALCO">Hindalco [HINDALCO]</option>
+                        <option value="ONGC">ONGC [ONGC]</option>
+                        <option value="COALINDIA">Coal India [COALINDIA]</option>
+                        <option value="BPCL">BPCL [BPCL]</option>
+                        <option value="IOC">Indian Oil Corp [IOC]</option>
+                        <option value="GAIL">GAIL [GAIL]</option>
+                        <option value="DIVISLAB">Divi's Labs [DIVISLAB]</option>
+                        <option value="SBILIFE">SBI Life Insurance [SBILIFE]</option>
+                        <option value="HDFCLIFE">HDFC Life Insurance [HDFCLIFE]</option>
+                        <option value="ICICIPRULI">ICICI Prudential Life [ICICIPRULI]</option>
+                        <option value="TATACONSUM">Tata Consumer [TATACONSUM]</option>
+                        <!-- Add more stocks as needed -->
+                    </select>
+                </div>
+                <!-- Text Input for Stock Code -->
+                <div class="mb-3">
+                    <label for="stock-symbol" class="form-label">Enter BSE Stock Code:</label>
+                    <input type="text" id="stock-symbol" class="form-control" placeholder="E.g., RELIANCE" required>
+                    <small id="error-message" class="form-text text-danger" style="display: none;">Invalid stock code. Please select a valid stock.</small>
+                </div>
+                <div class="mb-3">
+                    <label for="timeframe" class="form-label">Select Timeframe:</label>
+                    <select id="timeframe" class="form-select">
+                        <option value="1day">1 Day</option>
+                        <option value="1week">1 Week</option>
+                        <option value="1month">1 Month</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+                
+                <!--Spinner Logic -->
+                <div id="loading-container" class="text-center mt-4" style="display: none;">
+                    <div id="loading-spinner" class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Loading...</p>
+                </div>
+                
+            </form>
+
+            
+            
+
+
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="mt-5">
+            <h2 class="text-center">Prediction Results</h2>
+            <div id="result" class="alert alert-info text-center mt-4" style="display: none;">
+                <!-- Dynamic text will be inserted here -->
+            </div>
+            <!-- Chart Container -->
+            <canvas id="results-chart" style="display: none;" width="400" height="200"></canvas>
+            <!-- Extra Details -->
+            
+        </section>
+        
+    </main>
+
+   
+    <!-- Footer -->
+    <footer class="bg-primary text-center py-3">
+        <div class="container">
+            <p class="mb-0 text-white">&copy; 2025 BSE Stock Prediction Platform. All Rights Reserved.</p>
+        </div>
+        <div class="bg-primary py-2">
+            <div class="text-carousel">
+                <p class="marquee text-white">
+                    Disclaimer: The predictions provided by this application are for informational purposes only and should not be considered financial advice. Always conduct your own research before making investment decisions.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script for Dynamic Behavior -->
+    <script src="dynamicbehaviour.js"></script>
+
+
+    <!-- JS Logic for validation-->
+     <script src="textvalidation.js"></script>
+
+     
+
+    <!-- JS Logic for spinner-->
+    <script src="logicspinner.js"></script>
+
+
+
+    <!--Show or Hide Spinner Dynamically-->
+    <script src="showorhidespinner.js"></script>
+
+    <!--Charts Library to render graphs-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--JS Logic for chart and results display-->
+    <script></script>
+
+
+
+</body>
+</html>
