@@ -4,10 +4,11 @@ from sklearn.preprocessing import MinMaxScaler
 import requests
 import pandas as pd
 import os
+
 # Load the pre-trained LSTM model
 
-trained_model = load_model('model/lstm_model.h5')
-
+from tensorflow.keras.saving import load_model
+trained_model = load_model('model/lstm_model_v3.keras')  # New path
 
 
 
